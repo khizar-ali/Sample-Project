@@ -5,8 +5,29 @@ const movie = (state = {}, action) => {
     case 'ADD_MOVIE':
       return {
         id: incrementer++,
-        title: action.title,
-        genre: action.genre
+        expanded: false,
+        ...action.props
+      }
+
+    case 'TOGGLE_PROPERTY':
+
+      if(action.id !== state.id) {
+        return state
+      }
+
+      state[action.prop] = !state[action.prop]
+
+      return { ...state }
+
+    case 'UPDATE_MOVIE':
+
+      if(action.id !== state.id) {
+        return state
+      }
+
+      return {
+        ...state,
+        ...action.props
       }
 
     default:
@@ -19,14 +40,12 @@ const movies = (state = [], action) => {
     case 'ADD_MOVIE':
       return [...state, movie(undefined, action)]
 
+    case 'TOGGLE_PROPERTY':
+    case 'UPDATE_MOVIE':
+      return state.map(item => movie(item, action))
+
     case 'DELETE_MOVIE':
-
-      const idx = state.indexOf(state.filter(i => i.id === action.id));
-
-      return [
-        ...state.slice(0, idx),
-        ...state.slice(idx + 1)
-      ]
+      return state.filter(i => i.id !== action.id)
 
     default:
       return state
