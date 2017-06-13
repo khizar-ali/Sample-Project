@@ -1,10 +1,19 @@
 import React from 'react'
+import ItemModal from './ItemModal'
 
-const Item = ({ title, genre }) => {
+const Item = ({ title, genre, expanded, edit, onClick, onEditClick }) => {
   return (
     <div>
-      <span>{title}</span>,
-      <span>{genre}</span>
+      <span onClick={onClick}>{title}</span>
+
+      { expanded &&
+        <ItemModal
+          title={title}
+          genre={genre}
+          edit={edit}
+          onEditClick={onEditClick}
+        />
+      }
     </div>
   )
 }
