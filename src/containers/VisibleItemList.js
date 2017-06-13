@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import ItemList from '../components/ItemList'
-// import { toggleItem } from '../actions'
+import { toggleProperty } from '../actions'
 
 const mapStateToProps = (state) => {
   return {
@@ -10,9 +10,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    // onItemClick: (id) => {
-    //   dispatch(toggleItem(action.id)
-    // }
+    onToggleProp: (id, prop) => {
+      dispatch(toggleProperty(id, prop))
+    }
   }
 }
 
