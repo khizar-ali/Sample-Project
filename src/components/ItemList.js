@@ -3,7 +3,7 @@ import Item from './Item'
 
 const ItemList = ({ items, onToggleProp }) => {
   return (
-    <ul>
+    <ul style={{padding: 28}}>
       {items.map(item =>
         <Item
           key={item.id}

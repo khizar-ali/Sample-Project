@@ -17,7 +17,6 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const VisibleItemList =
-  connect(mapStateToProps, mapDispatchToProps)
-  (ItemList)
+  connect(mapStateToProps, mapDispatchToProps)(ItemList)
 
 export default VisibleItemList
