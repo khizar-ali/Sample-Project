@@ -4,7 +4,9 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import collectionApp from './reducers'
 import App from './components/App'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import { MuiThemeProvider } from 'material-ui/styles'
+
+import './index.css'
 
 // import registerServiceWorker from './registerServiceWorker';
 
@@ -19,7 +21,5 @@ render(
 
   document.getElementById('root')
 )
-
-
 
 // registerServiceWorker();
