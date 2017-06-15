@@ -27,7 +27,8 @@ const movie = (state = {}, action) => {
 
       return {
         ...state,
-        ...action.props
+        ...action.props,
+        edit: false
       }
 
     default:

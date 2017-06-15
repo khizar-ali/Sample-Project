@@ -14,7 +14,7 @@ const paperStyle = {
     flexDirection: 'row'
 }
 
-const Item = ({ title, genre, expanded, edit, onClick, onEditClick }) => {
+const Item = ({ id, title, genre, expanded, edit, onClick, onEditClick }) => {
   return (
     <li style={{listStyle: 'none', display: 'inline-block', margin: 10}}>
       <Paper elevation={6} onClick={onClick} style={paperStyle}>
@@ -22,9 +22,11 @@ const Item = ({ title, genre, expanded, edit, onClick, onEditClick }) => {
       </Paper>
       { expanded &&
         <ItemCard
+          id={id}
           title={title}
           genre={genre}
           edit={edit}
+          onCloseClick={onClick}
           onEditClick={onEditClick}
         />
       }
