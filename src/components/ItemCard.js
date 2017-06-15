@@ -41,16 +41,16 @@ const footerStyle = {
   textAlign: 'right'
 }
 
-let ItemCard = ({id, title, genre, edit, onCloseClick, onEditClick, dispatch}) => {
+let ItemCard = ({id, title, genre, files, edit, onCloseClick, onEditClick, dispatch}) => {
   let etitle, egenre;
 
   return (
     <Paper style={cardStyle}>
+
       <div style={{overflowY: 'auto', overflowX: 'hidden', height: 180}}>
-        <div style={reelItemStyle}><Image /></div>
-        <div style={reelItemStyle}><Image /></div>
-        <div style={reelItemStyle}><Image /></div>
-        <div style={reelItemStyle}><Image /></div>
+        {files.map((file) => {
+          return <div style={reelItemStyle}><Image file={file}/></div>
+        })}
       </div>
 
       {!edit && <Paper elevation={0} style={paperStyle}>
