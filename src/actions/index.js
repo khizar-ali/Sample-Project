@@ -5,9 +5,10 @@ export const addMovie = (props) => {
   }
 }
 
-export const updateMovie = (props) => {
+export const updateMovie = (id, props) => {
   return {
     type: 'UPDATE_MOVIE',
+    id,
     props
   }
 }
