@@ -15,7 +15,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin'
 
 injectTapEventPlugin();
 
-const App = (props) => {
+const App = () => {
   return (
     <Grid container style={{width: '100%'}}>
       <Grid item xs={12} style={{marginBottom:'100px'}}>
